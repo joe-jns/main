@@ -881,9 +881,23 @@ local fullbrightCheckbox = createModernCheckbox(VisualsCategory, "Fullbright", U
     end
 end)
 
+-- Initialize Player category elements
+local function initializePlayer()
+    -- Walk Speed Slider
+    local WalkSpeedSlider = createModernSlider(PlayerCategory, "Walk Speed", 16, 16, 500, "WalkSpeed")
+    WalkSpeedSlider.Position = UDim2.new(0.05, 0, 0, 20)
+
+    -- Jump Power Slider
+    local JumpPowerSlider = createModernSlider(PlayerCategory, "Jump Power", 50, 50, 500, "JumpPower")
+    JumpPowerSlider.Position = UDim2.new(0.05, 0, 0, 100)
+
+    -- Initialize flying functionality
+    initializeFly()
+end
+
 -- Initialize all features
 local function initializeAll()
-    initializeFly()
+    initializePlayer()
     initializeMisc()
 end
 
